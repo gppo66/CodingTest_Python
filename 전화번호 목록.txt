@@ -1,0 +1,8 @@
+def solution(phonebook):
+    answer = True
+    phonebook.sort()
+    
+    for i in range(len(phonebook)-1):
+        if phonebook[i+1].startswith(phonebook[i]):
+            return False
+    return answer
