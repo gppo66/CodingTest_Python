@@ -1,0 +1,11 @@
+def solution(progresses, speeds):
+    answer = [0 for i in range(100)]
+    day = 0
+    
+    for q,s in zip(progresses,speeds):
+        while q + (day * s) < 100:
+            day += 1
+        answer[day] += 1
+    result = [a for a in answer if a != 0 ]
+    
+    return result
