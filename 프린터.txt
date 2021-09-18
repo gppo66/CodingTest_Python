@@ -1,0 +1,19 @@
+def solution(priorities, location):
+    answer = 1
+    sp = sorted(priorities, reverse=True)
+    spi = 0
+    
+    while  True:
+        for i , priority in enumerate(priorities):
+            sv = sp[spi]
+            if priority == sv:
+                if i == location :
+                    break
+                else :
+                    spi += 1
+                    answer +=1
+        else:
+            continue
+        break
+
+    return answer
