@@ -1,0 +1,22 @@
+# 둘레 == brown = 2x + 2y -4 => x+y = (brown +4)/2
+#  속넓이 == yellow = (x-2)(y-2)
+# yellow 는 1이상 => y >= 3
+#  가로 >= 세로
+# 
+def solution(brown, yellow):
+    answer = []
+    x = 0
+    y = 0
+    sum = (brown+4)/2
+    total = int(sum)
+    for i in range(3,total):
+        y = i
+        x = total-y
+        if yellow == (x-2)*(y-2):
+            if x >= y:
+                answer.append(x)
+                answer.append(y)
+                break
+    
+    
+    return answer
