@@ -1,0 +1,7 @@
+# w * h - (w + h - 최대공약수)
+import math
+def solution(w,h):
+    answer = 1
+    gcd = math.gcd(w,h)
+    answer = w*h - (w + h - gcd)
+    return answer
