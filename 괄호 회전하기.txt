@@ -1,0 +1,25 @@
+def solution(s):
+    answer = 0
+    i = 0
+    if len(s)%2 != 0 :
+        return answer
+    for i in range(len(s)):
+        stack = []
+        for j in s:
+            if not stack:
+                stack.append(j)
+                continue
+                # stack에서 가져오기만 할때는 -1
+            if stack[-1] == '[' and j == ']':
+                stack.pop()
+            elif stack[-1] == '{' and j == '}':
+                stack.pop()
+            elif stack[-1] == '(' and j == ')':
+                stack.pop()
+            else:
+                stack.append(j)
+        # rotate        
+        s = s[1:] + s[0]
+        if not stack:
+            answer += 1
+    return answer
