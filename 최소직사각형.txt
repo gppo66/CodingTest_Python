@@ -1,0 +1,19 @@
+def solution(sizes):
+    answer = 0
+    x = []
+    y = []
+    a = 0
+    b = 0
+    for i in range(len(sizes)):
+        a = int(sizes[i][0])
+        b = int(sizes[i][1]) 
+        if a > b :
+            x.append(a)
+            y.append(b)
+        else:
+            x.append(b)
+            y.append(a)
+    x.sort(reverse=True)
+    y.sort(reverse=True)
+    answer = x[0] * y[0]
+    return answer
