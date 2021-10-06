@@ -1,0 +1,19 @@
+# (현재 자신의 번호 + 1) / 2가 다음 라운드에서의 번호.
+# //  = 나누기 연산 후 소수점 이하의 수를 버리고, 정수 부분의 수만 구함
+def solution(n,a,b):
+    answer = 0
+    big=small=0
+    
+    if a > b:
+        big = a
+        small = b
+    else:
+        big = b
+        small = a
+    
+    while big != small:
+        answer += 1
+        big = (big +1)//2
+        small = (small +1)//2
+        
+    return answer
