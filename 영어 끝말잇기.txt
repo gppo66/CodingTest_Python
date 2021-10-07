@@ -1,0 +1,24 @@
+def solution(n, words):
+    answer = []
+    uw = []
+    nu,r = 2,1
+    flag = 0
+    uw.append(words[0])
+    lw = words[0][-1]
+    for i in range(1,len(words)):
+        if words[i] not in uw and lw == words[i][0]:
+            uw.append(words[i])
+            lw = words[i][-1]
+        else:
+            answer.append(nu)
+            answer.append(r)
+            flag = 1
+            break
+        if nu == n :
+            nu = 1
+            r += 1
+        else:
+            nu += 1
+    if flag != 1:
+        answer = [0,0]
+    return answer
