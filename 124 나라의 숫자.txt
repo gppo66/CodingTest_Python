@@ -1,0 +1,14 @@
+def solution(n):
+    answer = ''
+    ntf = 0
+    while n > 0:
+        ntf = n % 3
+        n //= 3
+        if ntf == 0:
+            n -= 1
+            answer = '4' + answer
+        elif ntf == 1:
+            answer = '1' + answer
+        else :
+            answer = '2' + answer
+    return answer
