@@ -1,0 +1,17 @@
+a = int(input())
+n = 0
+answer = 0
+for i in range(0,a):
+    b = int(input())
+    answer = 0
+    while b > 0:
+        n = b%2
+        b //= 2
+        if n == 1: 
+            print(answer)
+            answer += 1
+        else:
+            answer += 1
+    
+
+    
